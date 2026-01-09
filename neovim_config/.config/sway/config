@@ -1,0 +1,9 @@
+# set background
+output * bg $HOME/.config/backgrounds/001.jpg fill
+
+
+# include custom sway config
+include "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf"
+
+# include default sway config
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf")'
