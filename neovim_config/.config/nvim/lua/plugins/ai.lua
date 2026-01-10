@@ -9,7 +9,7 @@ local CODEX_CMD = {
 }
 
 local CODEX_STATE = {
-  width = 0.4.5,
+  width = 0.45,
   cwd = nil,
   host_buf = nil,
 }

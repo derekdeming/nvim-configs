@@ -200,7 +200,8 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
+        ts_ls = {},
         rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -240,6 +241,7 @@ return {
         config.capabilities = vim.tbl_deep_extend('force', {}, capabilities, config.capabilities or {})
         vim.lsp.config(name, config)
       end
+      vim.lsp.enable(vim.tbl_keys(servers))
 
       -- Ensure the servers and tools above are installed
       --
@@ -267,4 +269,3 @@ return {
     end,
   },
 }
-
