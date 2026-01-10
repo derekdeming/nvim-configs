@@ -52,6 +52,13 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 - n <leader>s/ -> grep open buffers
 - n <leader>/ -> fuzzy search in current buffer
 
+## File managers
+- n - -> open parent directory (Oil)
+- n <leader>e -> toggle file tree (NvimTree)
+
+## Which-key
+- n <leader>? -> show buffer-local keymaps
+
 ## Commands
 - :Codex [dir] -> open Codex CLI in a terminal (optional cwd)
 - :CodexToggle -> toggle Codex window
@@ -59,6 +66,10 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 - :CodexRestart -> restart Codex session
 - :CodexWidth <0.2-0.8 | columns> -> set Codex window width
 - :CodexUpdate -> update Codex CLI via Homebrew
+- :ShowkeysToggle -> show key presses (showkeys)
+
+## Codex (terminal buffer)
+- t <CR> -> submit prompt (double-enter workaround)
 
 ## LSP (buffer-local; only when an LSP is attached)
 - n <leader>rn -> rename symbol
@@ -103,6 +114,9 @@ Textobjects (o/x):
 Swap (n):
 - <leader>xs -> swap parameter with next
 - <leader>xS -> swap parameter with previous
+
+## Formatting (conform.nvim)
+- n/o/v <leader>f -> format buffer
 
 ## Completion (blink.cmp)
 - Uses blink.cmp preset "default". See :h blink-cmp-config-keymap for details.

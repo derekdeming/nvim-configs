@@ -9,6 +9,13 @@ if you have zoxide installed, you can uncomment the zoxide line in the .zshrc fi
 
 and if you have tmuxifier installed, you can uncomment the tmuxifier line in the .zshrc file.
 
+## Neovim keymap docs
+
+- neovim_config/.config/nvim/KEYMAPS.md (all custom keymaps)
+- neovim_config/.config/nvim/KEYMAP_PRACTICE.md (full practice guide)
+- neovim_config/.config/nvim/KEYMAP_PRACTICE_PLUS.md (advanced drills)
+- neovim_config/.config/nvim/KEYMAP_PRACTICE_ONE_PAGE.md (condensed one-page routine)
+
 ## Installation
 
 To use this repository, simply clone it to your local machine. 
