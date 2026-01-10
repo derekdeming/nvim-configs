@@ -12,6 +12,10 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 - n <C-l> -> focus right split
 - n <C-j> -> focus lower split
 - n <C-k> -> focus upper split
+- n <leader>sv -> split window vertically
+- n <leader>sh -> split window horizontally
+- n <leader>wc -> close current window
+- n <leader>wo -> close other windows
 - n/i/v/o/t/s/x <Up>/<Down>/<Left>/<Right> -> disabled
 - i/c/o/t/s/x <A-h>/<A-j>/<A-k>/<A-l> -> move cursor left/down/up/right
 
@@ -43,7 +47,7 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 - n <leader>sk -> keymaps list
 - n/x <leader>sw -> grep word
 - n <leader>sr -> resume picker
-- n <leader>sh -> help
+- n <leader>sH -> help
 - n <leader>sd -> diagnostics
 - n <leader>s/ -> grep open buffers
 - n <leader>/ -> fuzzy search in current buffer

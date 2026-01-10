@@ -98,7 +98,7 @@ return {
     { "<leader>sk", function() Snacks.picker.keymaps() end, desc = "[S]earch [K]eymaps" },
     { "<leader>sw", function() Snacks.picker.grep_word() end, desc = "[S]earch current [W]ord", mode = { "n", "x" } },
     { "<leader>sr", function() Snacks.picker.resume() end, desc = "[S]earch [R]esume" },
-    { "<leader>sh", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
+    { "<leader>sH", function() Snacks.picker.help() end, desc = "[S]earch [H]elp" },
     { "<leader>sd", function() Snacks.picker.diagnostics() end, desc = "[S]earch [D]iagnostics" },
     { "<leader>s/", function() Snacks.picker.grep_buffers() end, desc = "[S]earch [/] in Open Files" },
     {

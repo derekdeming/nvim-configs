@@ -31,6 +31,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Window splits
+vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<leader>wc', '<cmd>close<CR>', { desc = 'Close current window' })
+vim.keymap.set('n', '<leader>wo', '<cmd>only<CR>', { desc = 'Close other windows' })
+
 
 -- Disable arrow keys in all modes
 -- local modes = { 'n', 'i', 'v', 'c', 't', 'o', 's', 'x' } -- All possible modes
