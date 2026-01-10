@@ -19,14 +19,16 @@ Core:
 - t `<Esc><Esc>` (Esc, then Esc) exit terminal mode
 - n `Ctrl+h`, `Ctrl+j`, `Ctrl+k`, `Ctrl+l` window focus
 - n `<leader>sv` (Space, then s, then v) `<leader>sh` (Space, then s, then h) `<leader>wc` (Space, then w, then c) `<leader>wo` (Space, then w, then o) split/close
-- n/i/v/o/t/s/x `Up Arrow`, `Down Arrow`, `Left Arrow`, `Right Arrow` disabled
-- i/c/o/t/s/x `Alt/Option+h`, `Alt/Option+j`, `Alt/Option+k`, `Alt/Option+l` cursor move
+- n/v/x `Up Arrow`, `Down Arrow`, `Left Arrow`, `Right Arrow` disabled
 
 Files and pickers:
 - n `\` (Backslash key) Snacks explorer
 - n `-` (Minus key) Oil parent dir
 - n `<leader>e` (Space, then e) NvimTree toggle
 - n `<leader><Space>` (Space, then Space) buffers
+- n `]b` (right bracket, then b) next buffer
+- n `[b` (left bracket, then b) previous buffer
+- n `<leader>bd` (Space, then b, then d) delete buffer
 - n `<leader>ss` (Space, then s, then s) smart files
 - n `<leader>sf` (Space, then s, then f) files
 - n `<leader>fF` (Space, then f, then Shift+f / F) files in dir

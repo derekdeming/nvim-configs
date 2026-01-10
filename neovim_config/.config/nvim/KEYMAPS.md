@@ -16,8 +16,7 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 - n <leader>sh -> split window horizontally
 - n <leader>wc -> close current window
 - n <leader>wo -> close other windows
-- n/i/v/o/t/s/x <Up>/<Down>/<Left>/<Right> -> disabled
-- i/c/o/t/s/x <A-h>/<A-j>/<A-k>/<A-l> -> move cursor left/down/up/right
+- n/v/x <Up>/<Down>/<Left>/<Right> -> disabled
 
 ## Snacks (picker/terminal/etc)
 - n <leader>lg -> LazyGit
@@ -58,6 +57,11 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 
 ## Which-key
 - n <leader>? -> show buffer-local keymaps
+
+## Buffers
+- n ]b -> next buffer
+- n [b -> previous buffer
+- n <leader>bd -> delete buffer
 
 ## Commands
 - :Codex [dir] -> open Codex CLI in a terminal (optional cwd)

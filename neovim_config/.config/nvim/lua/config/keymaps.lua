@@ -38,9 +38,8 @@ vim.keymap.set('n', '<leader>wc', '<cmd>close<CR>', { desc = 'Close current wind
 vim.keymap.set('n', '<leader>wo', '<cmd>only<CR>', { desc = 'Close other windows' })
 
 
--- Disable arrow keys in all modes
--- local modes = { 'n', 'i', 'v', 'c', 't', 'o', 's', 'x' } -- All possible modes
-local modes = { 'n', 'i', 'v', 'o', 't', 's', 'x' } -- All possible modes
+-- Disable arrow keys only in normal/visual modes (allow arrows in insert/terminal)
+local modes = { 'n', 'v', 'x' }
 local arrows = { '<Up>', '<Down>', '<Left>', '<Right>' }
 
 for _, mode in ipairs(modes) do
@@ -49,11 +48,7 @@ for _, mode in ipairs(modes) do
   end
 end
 
-local enabledModes = { 'i', 'c', 'o', 't', 's', 'x' }
--- Map Alt + hjkl in Insert mode
-for _, mode in ipairs(enabledModes) do
-  vim.keymap.set(mode, '<A-h>', '<Left>', { noremap = true, silent = true })
-  vim.keymap.set(mode, '<A-j>', '<Down>', { noremap = true, silent = true })
-  vim.keymap.set(mode, '<A-k>', '<Up>', { noremap = true, silent = true })
-  vim.keymap.set(mode, '<A-l>', '<Right>', { noremap = true, silent = true })
-end
+-- Buffer navigation
+vim.keymap.set('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = 'Delete buffer' })

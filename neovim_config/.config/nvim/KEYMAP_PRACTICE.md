@@ -29,8 +29,7 @@ Keymaps covered:
 - n `<C-h>` (Ctrl+h) `<C-j>` (Ctrl+j) `<C-k>` (Ctrl+k) `<C-l>` (Ctrl+l) (move focus)
 - n `<leader>sv` (Space, then s, then v) `<leader>sh` (Space, then s, then h) `<leader>wc` (Space, then w, then c) `<leader>wo` (Space, then w, then o) (splits and window control)
 - t `<Esc><Esc>` (Esc, then Esc) (exit terminal mode)
-- n/i/v/o/t/s/x `<Up>` (Up Arrow) `<Down>` (Down Arrow) `<Left>` (Left Arrow) `<Right>` (Right Arrow) (disabled)
-- i/c/o/t/s/x `<A-h>` (Alt/Option+h) `<A-j>` (Alt/Option+j) `<A-k>` (Alt/Option+k) `<A-l>` (Alt/Option+l) (cursor moves)
+- n/v/x `<Up>` (Up Arrow) `<Down>` (Down Arrow) `<Left>` (Left Arrow) `<Right>` (Right Arrow) (disabled)
 
 Drills:
 1) Clear search highlight
@@ -48,16 +47,11 @@ Drills:
    - Reps: [ ]1 [ ]2 [ ]3 [ ]4 [ ]5
 
 4) Arrow key discipline
-   - Do: press each arrow key in normal and insert mode (should do nothing)
-   - Then move with `h`, `j`, `k`, `l` or `Alt/Option+h`, `Alt/Option+j`, `Alt/Option+k`, `Alt/Option+l`
+   - Do: press each arrow key in normal/visual mode (should do nothing)
+   - Then move with `h`, `j`, `k`, `l`
    - Reps: [ ]1 [ ]2 [ ]3
 
-5) Alt-hjkl in insert/command-line
-   - Do: enter insert mode, move with `Alt/Option+h`, `Alt/Option+j`, `Alt/Option+k`, `Alt/Option+l`
-   - Do: enter command-line `:`, move with `Alt/Option+h`, `Alt/Option+j`, `Alt/Option+k`, `Alt/Option+l`
-   - Reps: [ ]1 [ ]2 [ ]3
-
-6) Terminal escape
+5) Terminal escape
    - Do: open a terminal with `<C-/>` (Ctrl+/), type `ls`, then `<Esc><Esc>` (Esc, then Esc)
    - Reps: [ ]1 [ ]2 [ ]3 [ ]4 [ ]5
 
@@ -67,6 +61,9 @@ Keymaps covered:
 - n `-` (Minus key) (Oil open parent directory)
 - n `<leader>e` (Space, then e) (NvimTree toggle)
 - n `<leader><Space>` (Space, then Space) (buffers picker)
+- n `]b` (right bracket, then b) (next buffer)
+- n `[b` (left bracket, then b) (previous buffer)
+- n `<leader>bd` (Space, then b, then d) (delete buffer)
 
 Drills:
 1) Explorer circuit
@@ -78,6 +75,12 @@ Drills:
 2) Buffer loop
    - Open 3 files
    - Do: `<leader><Space>` (Space, then Space) to switch buffers and return to start
+   - Reps: [ ]1 [ ]2 [ ]3 [ ]4 [ ]5
+
+3) Buffer navigation
+   - Open 3 files
+   - Do: `]b` (right bracket, then b) and `[b` (left bracket, then b) to cycle
+   - Do: `<leader>bd` (Space, then b, then d) to delete the current buffer
    - Reps: [ ]1 [ ]2 [ ]3 [ ]4 [ ]5
 
 ## Drill pack C: Search and pickers
@@ -294,14 +297,16 @@ Core and windows:
 - t `<Esc><Esc>` (Esc, then Esc)
 - n `<C-h>` (Ctrl+h) `<C-j>` (Ctrl+j) `<C-k>` (Ctrl+k) `<C-l>` (Ctrl+l)
 - n `<leader>sv` (Space, then s, then v) `<leader>sh` (Space, then s, then h) `<leader>wc` (Space, then w, then c) `<leader>wo` (Space, then w, then o)
-- n/i/v/o/t/s/x `<Up>` (Up Arrow) `<Down>` (Down Arrow) `<Left>` (Left Arrow) `<Right>` (Right Arrow) (disabled)
-- i/c/o/t/s/x `<A-h>` (Alt/Option+h) `<A-j>` (Alt/Option+j) `<A-k>` (Alt/Option+k) `<A-l>` (Alt/Option+l)
+- n/v/x `<Up>` (Up Arrow) `<Down>` (Down Arrow) `<Left>` (Left Arrow) `<Right>` (Right Arrow) (disabled)
 
 Files, buffers, and pickers:
 - n `\` (Backslash key)
 - n `-` (Minus key)
 - n `<leader>e` (Space, then e)
 - n `<leader><Space>` (Space, then Space)
+- n `]b` (right bracket, then b)
+- n `[b` (left bracket, then b)
+- n `<leader>bd` (Space, then b, then d)
 - n `<leader>ss` (Space, then s, then s)
 - n `<leader>sf` (Space, then s, then f)
 - n `<leader>fF` (Space, then f, then Shift+f / F)
