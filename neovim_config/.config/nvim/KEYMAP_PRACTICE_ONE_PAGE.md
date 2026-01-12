@@ -89,4 +89,5 @@ Terminal and tools:
 - n `<leader>lg` (Space, then l, then g) LazyGit
 - n `<leader>ac` (Space, then a, then c) `<leader>aC` (Space, then a, then Shift+c / C) `<leader>aw` (Space, then a, then w) `<leader>aR` (Space, then a, then Shift+r / R) `<leader>aQ` (Space, then a, then Shift+q / Q) `<leader>a-` (Space, then a, then -) `<leader>a+` (Space, then a, then Shift+= / +) `<leader>aU` (Space, then a, then Shift+u / U) Codex
 - t `<CR>` (Enter) submit Codex prompt
+- t `<M-h>` `<M-j>` `<M-k>` `<M-l>` (Alt/Option+hjkl) window focus from Codex
 - n/t `]]` (right bracket, right bracket) `[[` (left bracket, left bracket) next/prev reference

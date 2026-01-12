@@ -74,6 +74,7 @@ Legend: n=normal, v=visual, x=visual, i=insert, t=terminal, o=operator-pending, 
 
 ## Codex (terminal buffer)
 - t <CR> -> submit prompt (double-enter workaround)
+- t <M-h>/<M-j>/<M-k>/<M-l> -> focus left/down/up/right window
 
 ## LSP (buffer-local; only when an LSP is attached)
 - n <leader>rn -> rename symbol

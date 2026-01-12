@@ -1,6 +1,28 @@
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
-vim.opt.guifont = "Iosevka Nerd Font:h12"
+local function font_file_exists(patterns)
+  local dirs = {
+    vim.fn.expand("~/Library/Fonts"),
+    "/Library/Fonts",
+    "/System/Library/Fonts",
+  }
+  for _, dir in ipairs(dirs) do
+    for _, pattern in ipairs(patterns) do
+      if #vim.fn.globpath(dir, pattern, false, true) > 0 then
+        return true
+      end
+    end
+  end
+  return false
+end
+
+local has_iosevka_nerd = font_file_exists({ "Iosevka*Nerd*.*", "Iosevka*NF*.*" })
+if has_iosevka_nerd then
+  vim.g.have_nerd_font = true
+  vim.opt.guifont = "Iosevka Nerd Font:h12"
+else
+  vim.g.have_nerd_font = false
+  vim.opt.guifont = "Menlo:h12"
+end
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`

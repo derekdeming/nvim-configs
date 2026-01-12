@@ -80,6 +80,7 @@ Objective: drive completion without mouse.
 Objective: use Codex terminal while staying in editing flow.
 - Do: `<leader>ac` (Space, then a, then c) open, `<leader>aw` (Space, then a, then w) focus toggle
 - Do: send a prompt, then return to editor
+- Do: while in Codex, jump windows with `<M-h>`/`<M-l>` (Alt/Option+h/l)
 - Do: `<leader>a-` (Space, then a, then -) and `<leader>a+` (Space, then a, then Shift+= / +) resize
 - Reps: [ ]1 [ ]2 [ ]3 [ ]4 [ ]5
 

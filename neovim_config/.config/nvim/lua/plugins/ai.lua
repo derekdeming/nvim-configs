@@ -1,5 +1,21 @@
+local function resolve_codex_bin()
+  local candidates = {
+    vim.fn.expand("~/.npm-global/bin/codex"),
+    "/opt/homebrew/bin/codex",
+    "/usr/local/bin/codex",
+    vim.fn.exepath("codex"),
+    "codex",
+  }
+  for _, path in ipairs(candidates) do
+    if path and path ~= "" and vim.fn.executable(path) == 1 then
+      return path
+    end
+  end
+  return "codex"
+end
+
 local CODEX_CMD = {
-  "codex",
+  resolve_codex_bin(),
   "--model",
   "gpt-5.2-codex",
   "--config",
@@ -72,12 +88,33 @@ local function setup_codex_term(term)
   end
   vim.b[term.buf].codex_enter_fix = true
 
-  -- Workaround: Codex TUI in the embedded terminal needs Enter twice.
-  vim.keymap.set("t", "<CR>", "<CR><CR>", {
+  local function tmap(lhs, rhs, desc)
+    vim.keymap.set("t", lhs, rhs, {
+      buffer = term.buf,
+      silent = true,
+      desc = desc,
+    })
+  end
+
+  -- Workaround: first submit after opening sometimes needs a double-Enter.
+  vim.keymap.set("t", "<CR>", function()
+    if vim.b[term.buf].codex_enter_once then
+      return "<CR>"
+    end
+    vim.b[term.buf].codex_enter_once = true
+    return "<CR><CR>"
+  end, {
     buffer = term.buf,
+    expr = true,
     silent = true,
     desc = "Codex (submit)",
   })
+
+  -- Window navigation from inside the Codex terminal without stealing Backspace.
+  tmap("<M-h>", "<C-\\><C-n><C-w>h", "Window left")
+  tmap("<M-j>", "<C-\\><C-n><C-w>j", "Window down")
+  tmap("<M-k>", "<C-\\><C-n><C-w>k", "Window up")
+  tmap("<M-l>", "<C-\\><C-n><C-w>l", "Window right")
 end
 
 local function get_codex_term(create)
@@ -114,7 +151,7 @@ local function resize_codex(width)
 end
 
 local function open_codex(dir)
-  if vim.fn.executable("codex") ~= 1 then
+  if vim.fn.executable(CODEX_CMD[1]) ~= 1 then
     vim.notify("codex CLI not found. Install it and try again.", vim.log.levels.ERROR)
     return
   end

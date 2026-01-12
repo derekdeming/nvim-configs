@@ -265,6 +265,7 @@ Keymaps covered:
 - n `<leader>lg` (Space, then l, then g) (LazyGit)
 - n `<leader>ac` (Space, then a, then c) `<leader>aC` (Space, then a, then Shift+c / C) `<leader>aw` (Space, then a, then w) `<leader>aR` (Space, then a, then Shift+r / R) `<leader>aQ` (Space, then a, then Shift+q / Q) `<leader>a-` (Space, then a, then -) `<leader>a+` (Space, then a, then Shift+= / +) `<leader>aU` (Space, then a, then Shift+u / U) (Codex)
 - t `<CR>` (Enter) (Codex terminal submits double-enter)
+- t `<M-h>` `<M-j>` `<M-k>` `<M-l>` (Alt/Option+hjkl) (Codex terminal window focus)
 - n/t `]]` (right bracket, right bracket) `[[` (left bracket, left bracket) (next/prev reference)
 
 Drills:
@@ -288,6 +289,7 @@ Drills:
    - Do: `<leader>aQ` (Space, then a, then Shift+q / Q) to hide, `<leader>ac` (Space, then a, then c) to show again
    - Do: `<leader>aR` (Space, then a, then Shift+r / R) to restart, `<leader>aU` (Space, then a, then Shift+u / U) to update
    - In the Codex terminal, press `<CR>` (Enter) to submit a prompt
+   - While focused in Codex, use `<M-h>`/`<M-l>` (Alt/Option+h/l) to jump back and forth
    - Reps: [ ]1 [ ]2 [ ]3
 
 ## Mastery checklist (every keymap in this config)
@@ -366,4 +368,5 @@ Terminal and tools:
 - n `<leader>lg` (Space, then l, then g)
 - n `<leader>ac` (Space, then a, then c) `<leader>aC` (Space, then a, then Shift+c / C) `<leader>aw` (Space, then a, then w) `<leader>aR` (Space, then a, then Shift+r / R) `<leader>aQ` (Space, then a, then Shift+q / Q) `<leader>a-` (Space, then a, then -) `<leader>a+` (Space, then a, then Shift+= / +) `<leader>aU` (Space, then a, then Shift+u / U)
 - t `<CR>` (Enter) (Codex terminal)
+- t `<M-h>` `<M-j>` `<M-k>` `<M-l>` (Alt/Option+hjkl) (Codex terminal window focus)
 - n/t `]]` (right bracket, right bracket) `[[` (left bracket, left bracket)
