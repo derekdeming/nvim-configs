@@ -52,7 +52,10 @@ return {
                     end
 
                     if pcall(vim.treesitter.start, ev.buf, lang) then
-                        vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                        -- Only override indentexpr if no indent is already set by ftplugins.
+                        if vim.bo[ev.buf].indentexpr == "" then
+                            vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                        end
                     end
                 end,
             })
@@ -62,7 +65,7 @@ return {
     {
         "windwp/nvim-ts-autotag",
         enabled = true,
-        ft = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte" },
+        ft = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "rust", "graphql", "python" },
         config = function()
             -- Independent nvim-ts-autotag setup
             require("nvim-ts-autotag").setup({

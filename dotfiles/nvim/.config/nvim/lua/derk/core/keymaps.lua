@@ -5,7 +5,7 @@ vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
-end)
+end, { desc = "Source current file" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "moves lines down in visual selection" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "moves lines up in visual selection" })
@@ -20,28 +20,28 @@ vim.keymap.set("v", "<", "<gv", opts)
 vim.keymap.set("v", ">", ">gv", opts)
 
 -- the how it be paste
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { silent = true, desc = "Paste without yanking" })
 
 -- remember yanked
-vim.keymap.set("v", "p", '"_dp', opts)
+vim.keymap.set("v", "p", '"_dp', { silent = true, desc = "Paste without yanking" })
 
 -- Copies or Yank to system clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
+vim.keymap.set("n", "<leader>Y", [["+Y]], { silent = true, desc = "Yank line to clipboard" })
 
 -- leader d delete wont remember as yanked/clipboard when delete pasting
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { silent = true, desc = "Delete without yanking" })
 
 -- ctrl c as escape cuz Im lazy to reach up to the esc key
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-c>", ":nohl<CR>", { desc = "Clear search hl", silent = true })
 -- format without prettier using the built in
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { silent = true, desc = "Format file" })
 
 -- Unmaps Q in normal mode
 vim.keymap.set("n", "Q", "<nop>")
 
 --Stars new tmux session from in here
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { silent = true, desc = "Tmux sessionizer" })
 
 -- prevent x delete from registering when next paste
 vim.keymap.set("n", "x", '"_x', opts)
@@ -63,11 +63,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- tab stuff
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>")   --open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>") --close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>")     --go to next
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>")     --go to pre
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>") --open current tab in new tab
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { silent = true, desc = "Tab new" })
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { silent = true, desc = "Tab close" })
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { silent = true, desc = "Tab next" })
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { silent = true, desc = "Tab previous" })
+vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { silent = true, desc = "Tab new with current buffer" })
 
 --split management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
