@@ -12,6 +12,20 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local builtin = require("telescope.builtin")
+		local function project_root()
+			local ok, snacks = pcall(require, "snacks")
+			if ok and snacks.git and snacks.git.get_root then
+				local root = snacks.git.get_root()
+				if root and root ~= "" then
+					return root
+				end
+			end
+			local git_root = vim.fn.systemlist("git -C " .. vim.fn.getcwd() .. " rev-parse --show-toplevel")[1]
+			if git_root and git_root ~= "" then
+				return git_root
+			end
+			return vim.fn.getcwd()
+		end
 
 		telescope.load_extension("fzf")
 		telescope.load_extension("themes")
@@ -40,6 +54,9 @@ return {
 
 		-- Keymaps
 		vim.keymap.set("n", "<leader>pr", "<cmd>Telescope oldfiles<CR>", { desc = "Fuzzy find recent files" })
+		vim.keymap.set("n", "<leader>rg", function()
+			builtin.live_grep({ cwd = project_root() })
+		end, { desc = "Ripgrep (project root)" })
 		vim.keymap.set("n", "<leader>pWs", function()
 			local word = vim.fn.expand("<cWORD>")
 			builtin.grep_string({ search = word })

@@ -1,3 +1,28 @@
+local function prepend_path(path)
+    if not path or path == "" then
+        return
+    end
+    local env_path = vim.env.PATH or ""
+    for _, entry in ipairs(vim.split(env_path, ":", { plain = true })) do
+        if entry == path then
+            return
+        end
+    end
+    vim.env.PATH = path .. (env_path == "" and "" or (":" .. env_path))
+end
+
+if vim.fn.executable("rg") == 0 then
+    prepend_path("/opt/homebrew/bin")
+    prepend_path("/usr/local/bin")
+end
+
+do
+    local uv = vim.uv or vim.loop
+    if uv and uv.cwd and not uv.cwd() then
+        pcall(vim.cmd, "cd " .. vim.fn.expand("~"))
+    end
+end
+
 return {
     -- HACK: docs @ https://github.com/folke/snacks.nvim/blob/main/docs
     {
@@ -25,15 +50,20 @@ return {
             -- HACK: read picker docs @ https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
             picker = {
                 enabled = true,
+                sources = {
+                    files = {
+                        cmd = "find", -- avoid fd/rg issues in some terminals
+                        hidden = true, -- include dotfiles (dashboard/file search won't be empty in dotfile-only dirs)
+                        exclude = { ".git", "node_modules", "dist", "build" },
+                    },
+                    grep = {
+                        hidden = true,
+                        exclude = { ".git", "node_modules", "dist", "build" },
+                    },
+                },
                 matchers = {
                     frecency = true,
                     cwd_bonus = false,
-                },
-                exclude = {
-                    ".git",
-                    "node_modules",
-                    "dist",
-                    "build",
                 },
                 formatters = {
                     file = {
@@ -129,6 +159,19 @@ return {
             },
             dashboard = {
                 enabled = true,
+                preset = {
+                    keys = {
+                        { icon = " ", key = "f", desc = "Smart Find Files", action = function() require("snacks").picker.smart() end },
+                        { icon = " ", key = "g", desc = "Find Text", action = function() require("snacks").picker.grep() end },
+                        { icon = " ", key = "r", desc = "Recent Files", action = function() require("snacks").picker.recent() end },
+                        { icon = " ", key = "c", desc = "Config", action = function()
+                            require("snacks").picker.files({ cwd = vim.fn.stdpath("config") })
+                        end },
+                        { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                        { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy" },
+                        { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                    },
+                },
                 sections = {
                     { section = "header" },
                     { section = "keys", gap = 1, padding = 1 },
@@ -155,6 +198,7 @@ return {
             { "<leader>pf", function() require("snacks").picker.files() end, desc = "Find Files (Snacks Picker)" },
             { "<leader>pc", function() require("snacks").picker.files({ cwd = "~/dotfiles/nvim/.config/nvim/lua" }) end, desc = "Find Config File" },
             { "<leader>ps", function() require("snacks").picker.grep() end, desc = "Grep word" },
+            { "<leader>ss", function() require("snacks").picker.smart() end, desc = "Smart Find Files" },
             { "<leader>pws", function() require("snacks").picker.grep_word() end, desc = "Search Visual selection or Word", mode = { "n", "x" } },
             { "<leader>pk", function() require("snacks").picker.keymaps({ layout = "ivy" }) end, desc = "Search Keymaps (Snacks Picker)" },
 
