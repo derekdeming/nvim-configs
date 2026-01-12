@@ -2,7 +2,8 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-PACKAGE="neovim_config"
+STOW_DIR="$ROOT/dotfiles"
+PACKAGES=(nvim ghostty)
 
 usage() {
   cat <<'USAGE'
@@ -63,7 +64,7 @@ link_configs() {
     echo "stow not found. Install it or re-run with --no-link."
     return 1
   fi
-  stow -d "$ROOT" -t "$HOME" "$PACKAGE"
+  stow -d "$STOW_DIR" -t "$HOME" "${PACKAGES[@]}"
 }
 
 main() {

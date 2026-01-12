@@ -1,0 +1,64 @@
+font-family = "Iosevka Nerd Font"
+
+font-size = 12
+
+window-padding-x = 10
+window-padding-y = 5
+
+background-opacity = 0.70
+background-blur-radius = 25
+
+
+# Gruvbox Material (hard, original) to match Neovim
+background = #1d2021
+foreground = #f6ebc9
+cursor-color = #f6ebc9
+cursor-style = block
+cursor-style-blink = false 
+cursor-invert-fg-bg = true 
+
+selection-background = #3c3836
+selection-foreground = #f6ebc9
+
+macos-titlebar-style = hidden 
+macos-option-as-alt = true 
+mouse-hide-while-typing = true
+
+confirm-close-surface = false 
+window-decoration = true 
+window-padding-x = 10
+window-padding-y = 10 
+window-padding-balance = true 
+
+auto-update = check 
+auto-update-channel = stable 
+
+shell-integration-features = no-cursor
+copy-on-select = clipboard
+
+#Shaders
+# custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/retro-terminal.glsl
+
+# 16-color palette from gruvbox-material (original, hard) + fg override
+palette = 0=#504945
+palette = 8=#504945
+palette = 1=#fb4934
+palette = 9=#fb4934
+palette = 2=#b8bb26
+palette = 10=#b8bb26
+palette = 3=#fabd2f
+palette = 11=#fabd2f
+palette = 4=#83a598
+palette = 12=#83a598
+palette = 5=#d3869b
+palette = 13=#d3869b
+palette = 6=#8ec07c
+palette = 14=#8ec07c
+palette = 7=#f6ebc9
+palette = 15=#f6ebc9
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Set the command to execute on launch
+# command = "/home/derek/.local/bin/ghostty-tmux"

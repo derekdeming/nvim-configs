@@ -39,7 +39,7 @@ Options:
 If you already have dependencies installed and only want to link dotfiles:
 
 ```bash
-stow -d . -t ~ neovim_config
+stow -d dotfiles -t ~ nvim ghostty
 ```
 
 ## Contributing
