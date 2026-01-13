@@ -10,6 +10,7 @@ background-blur-radius = 25
 
 
 # Gruvbox Material (hard, original) to match Neovim
+theme = Gruvbox Dark
 background = #1d2021
 foreground = #f6ebc9
 cursor-color = #f6ebc9
@@ -20,7 +21,6 @@ cursor-invert-fg-bg = true
 selection-background = #3c3836
 selection-foreground = #f6ebc9
 
-macos-titlebar-style = hidden 
 macos-option-as-alt = true 
 mouse-hide-while-typing = true
 

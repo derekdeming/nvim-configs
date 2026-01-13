@@ -1,0 +1,49 @@
+add_newline = false
+
+format = """
+$directory$git_branch$git_status$nodejs$nix_shell$python
+$time$character
+"""
+
+[directory]
+style = "blue"
+truncation_length = 1
+truncate_to_repo = true
+format = "[$path]($style) "
+
+[git_branch]
+symbol = " "
+style = "blue"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = '[\[$all_status\]]($style) '
+staged = "+"
+modified = "!"
+untracked = "?"
+
+[nodejs]
+symbol = "󰎙 "
+style = "yellow"
+format = "via [$symbol$version]($style) "
+
+[nix_shell]
+symbol = "❄ "
+style = "cyan"
+format = "via [$symbol$state]($style) "
+impure_msg = "impure"
+
+[python]
+style = "blue"
+format = "([$virtualenv]($style)) "
+
+[time]
+disabled = false
+time_format = "%T"
+style = "yellow"
+format = "at [$time]($style) "
+
+[character]
+success_symbol = "[→](bold green) "
+error_symbol = "[→](bold red) "

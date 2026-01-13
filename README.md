@@ -1,5 +1,5 @@
 # nvim-configs
-This repository contains my personal configuration files and scripts for setting up my Neovim/Neovide/Ghostty environment. It also includes a Codex CLI integration within Neovim powered by your ChatGPT subscription.
+This repository contains my personal configuration files and scripts for setting up my Neovim/Neovide/Ghostty/Lazygit environment. It also includes a Codex CLI integration within Neovim powered by your ChatGPT subscription.
 
 ## Quick start (one-stop setup)
 
@@ -10,7 +10,7 @@ cd nvim-configs
 ```
 
 The setup script will:
-- install Neovim/Neovide/Ghostty and common CLI tools (macOS only for now)
+- install Neovim/Neovide/Ghostty/Lazygit and common CLI tools (macOS only for now)
 - install the Iosevka Nerd Font (macOS only for now)
 - symlink the dotfiles into your home directory via `stow`
 
@@ -39,7 +39,7 @@ Options:
 If you already have dependencies installed and only want to link dotfiles:
 
 ```bash
-stow -d dotfiles -t ~ nvim ghostty
+stow -d dotfiles -t ~ nvim ghostty lazygit
 ```
 
 ## Contributing
