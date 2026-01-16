@@ -178,6 +178,44 @@ Snacks git:
 - `<leader>lg` open lazygit
 - `<leader>gl` lazygit logs
 
+Review.nvim (code review annotations):
+- `<leader>R` open review diff
+- `<leader>RC` review commits (picker)
+- `:Review` / `:Review open` open review diff
+- `:Review commits` pick commits to review
+- `:Review close` close + export to clipboard
+- `:Review export` export to clipboard
+- `:Review preview` preview export in split
+- `:Review sidekick` send to sidekick.nvim
+- `:Review list` list all comments
+- `:Review clear` clear all comments
+- `:Review toggle` toggle readonly/edit mode
+
+Review.nvim diff view (readonly mode):
+- `i` add comment (choose type in popup)
+- `d` delete comment at cursor
+- `e` edit comment at cursor
+- `c` list all comments
+- `f` toggle file panel
+- `R` toggle readonly/edit mode
+- `<Tab>` / `<S-Tab>` next/prev file
+- `]n` / `[n` next/prev comment
+- `C` export to clipboard + preview
+- `S` send comments to sidekick.nvim
+- `<C-r>` clear all comments
+- `q` close and export
+
+Review.nvim comment popup:
+- `<CR>` insert newline
+- `<C-s>` submit comment
+- `<Tab>` cycle comment type
+- `<Esc>` / `q` cancel
+
+Review.nvim diff view (edit mode):
+- `<leader>cn` / `<leader>cs` / `<leader>ci` / `<leader>cp` add Note/Suggestion/Issue/Praise
+- `<leader>cd` delete comment
+- `<leader>ce` edit comment
+
 ## 6) Debugging
 - `<leader>db` toggle breakpoint
 - `<leader>dc` continue

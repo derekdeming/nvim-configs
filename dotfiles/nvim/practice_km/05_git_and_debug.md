@@ -78,11 +78,68 @@ Step 15: Worktrees
 # Keys: Space w c
 <leader>wc
 
-Part D: Debugging (DAP)
-Step 16: Toggle breakpoint
+Part D: Review.nvim (code review workflow)
+Step 16: Open review diff for current changes
+# Keys: Space Shift+R
+<leader>R
+
+Step 17: (Optional) Pick commits to review
+# Keys: Space Shift+R then C
+<leader>RC
+
+Step 18: Add a comment on a line (readonly mode)
+# Keys: i (then choose type, write comment, Ctrl+s to submit)
+i
+
+Step 19: Edit / delete comment at cursor
+# Keys: e (edit) / d (delete)
+e
+d
+
+Step 20: Jump between comments
+# Keys: ] n / [ n
+]n
+[n
+
+Step 21: Navigate files in the diff
+# Keys: Tab / Shift+Tab
+<Tab>
+<S-Tab>
+
+Step 22: Toggle readonly/edit mode and use leader comment keys
+# Keys: R then Space c n/s/i/p (add), Space c d (delete), Space c e (edit)
+R
+<leader>cn
+<leader>cs
+<leader>ci
+<leader>cp
+<leader>cd
+<leader>ce
+
+Step 23: Export comments and close
+# Keys: C (export+preview) or q (close+export)
+C
+q
+
+Step 24: Full command workflow (preview/list/clear)
+:Review preview
+:Review list
+:Review clear
+
+Step 25: Send to AI
+# If you have sidekick.nvim: use :Review sidekick
+# Otherwise paste from clipboard into ChatGPT/Claude/Codex
+:Review sidekick
+
+Part E: Debugging (DAP)
+Step 26: Toggle breakpoint
 # Keys: Space d b
 <leader>db
 
-Step 17: Continue debugging
+Step 27: Continue debugging
 # Keys: Space d c
 <leader>dc
+
+Notes:
+- Review.nvim comments are stored per git branch and exported as AI-ready markdown.
+- Adjust settings by editing the plugin opts in `dotfiles/nvim/.config/nvim/lua/derk/plugins/gitstuff.lua` (comment types, keymaps, export context, readonly mode).

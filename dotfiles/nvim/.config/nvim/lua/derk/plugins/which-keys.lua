@@ -56,6 +56,7 @@ return {
       { '<leader>m', group = '[M]isc/Format' },
       { '<leader>p', group = '[P]icker/Search' },
       { '<leader>r', group = '[R]ename/Restart' },
+      { '<leader>R', group = '[R]eview' },
       { '<leader>s', group = '[S]plits' },
       { '<leader>t', group = '[T]abs/Tasks' },
       { '<leader>v', group = '[V]code' },
