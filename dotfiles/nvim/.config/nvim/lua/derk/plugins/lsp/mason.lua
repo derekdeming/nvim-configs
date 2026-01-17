@@ -41,6 +41,8 @@ return {
                 "cssls",
                 "tailwindcss",
                 "gopls",
+                "pyright",
+                "rust_analyzer",
                 "angularls",
                 "astro",
                 "emmet_ls",
@@ -55,7 +57,11 @@ return {
                 "prettier", -- prettier formatter
                 "stylua",   -- lua formatter
                 "isort",    -- python formatter
+                "black",
+                "gofumpt",
+                "goimports",
                 "pylint",
+                "rustfmt",
                 "clangd",
                 "denols",
                 -- { 'eslint_d', version = '13.1.2' },

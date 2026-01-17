@@ -173,6 +173,33 @@ return {
             },
         })
 
+        -- pyright (Python)
+        vim.lsp.config("pyright", {
+            settings = {
+                python = {
+                    analysis = {
+                        typeCheckingMode = "basic",
+                        autoSearchPaths = true,
+                        useLibraryCodeForTypes = true,
+                    },
+                },
+            },
+        })
+
+        -- rust_analyzer
+        vim.lsp.config("rust_analyzer", {
+            settings = {
+                ["rust-analyzer"] = {
+                    cargo = {
+                        allFeatures = true,
+                    },
+                    checkOnSave = {
+                        command = "clippy",
+                    },
+                },
+            },
+        })
+
         -- tailwind
         vim.lsp.config("tailwindcss", {
             filetypes = {
@@ -198,6 +225,8 @@ return {
         vim.lsp.enable("emmet_ls")
         vim.lsp.enable("ts_ls")
         vim.lsp.enable("gopls")
+        vim.lsp.enable("pyright")
+        vim.lsp.enable("rust_analyzer")
         vim.lsp.enable("astro")
         vim.lsp.enable("tailwindcss")
     end,
