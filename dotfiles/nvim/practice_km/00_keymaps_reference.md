@@ -15,7 +15,7 @@ Legend: <leader> = Space, <C-x> = Ctrl+x, <M-x> = Alt/Option+x, <S-x> = Shift+x,
 - `p` (v) paste over selection without yanking
 - `<leader>d` (n/v) delete to black hole (does not yank)
 - `<leader>Y` (n) yank line to system clipboard
-- `<leader>s` (n) substitute word under cursor across file
+- `<leader>sr` (n) substitute word under cursor across file
 - `<C-c>` (i) escape insert mode
 - `<C-c>` (n) clear search highlight
 - `<leader>f` (n) format via LSP
@@ -94,6 +94,19 @@ Harpoon:
 - `<C-e>` toggle Harpoon quick menu
 - `<C-y>` / `<C-i>` / `<C-n>` / `<C-s>` jump to slots 1-4
 - `<C-S-P>` / `<C-S-N>` previous/next Harpoon item
+
+Haunt (annotated bookmarks):
+- `<leader>ba` annotate current line
+- `<leader>bt` toggle current annotation
+- `<leader>bT` toggle all annotations
+- `<leader>bd` delete annotation on current line
+- `<leader>bC` clear all annotations
+- `<leader>bn` / `<leader>bp` next/prev annotation
+- `<leader>bl` open haunt picker (Snacks)
+- `<leader>bq` populate quickfix (all)
+- `<leader>bQ` populate quickfix (current buffer)
+- `<leader>bs` copy all haunt locations to clipboard
+- `<leader>bS` copy buffer locations to clipboard
 
 Sessions and worktrees:
 - `<leader>ws` save session for cwd

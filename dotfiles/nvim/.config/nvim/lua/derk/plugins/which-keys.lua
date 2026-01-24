@@ -47,6 +47,7 @@ return {
     -- Document existing key chains
     spec = {
       { '<leader>a', group = 'H[a]rpoon' },
+      { '<leader>b', group = '[B]ookmarks' },
       { '<leader>c', group = '[C]odex' },
       { '<leader>d', group = '[D]elete/Debug' },
       { '<leader>e', group = '[E]xplorer' },
